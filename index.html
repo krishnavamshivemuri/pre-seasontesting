@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>F1 2026 Bahrain Testing - Performance Analysis</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
@@ -173,16 +173,121 @@
         }
         
         @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 0;
+            }
+            
+            header {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+            }
+            
+            .section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.3em;
+            }
+            
             .grid {
                 grid-template-columns: 1fr;
             }
             
-            h1 {
-                font-size: 2em;
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
             
-            .section {
-                padding: 20px;
+            .stat-card {
+                padding: 15px;
+            }
+            
+            .stat-value {
+                font-size: 1.8em;
+            }
+            
+            .chart-container {
+                padding: 15px;
+                min-height: 300px;
+            }
+            
+            .chart-title {
+                font-size: 1em;
+            }
+            
+            .sector-table {
+                font-size: 0.85em;
+            }
+            
+            .sector-table th,
+            .sector-table td {
+                padding: 8px 5px;
+            }
+            
+            /* Make toggle button full width on mobile */
+            #toggleTeamsBtn {
+                width: 100%;
+                padding: 15px;
+                font-size: 0.95em;
+            }
+            
+            /* Adjust sector overlays for mobile */
+            .track-map img {
+                border-radius: 5px;
+            }
+            
+            /* Make insights text more readable on mobile */
+            .section ul {
+                font-size: 0.95em;
+            }
+            
+            .section li {
+                margin-bottom: 8px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            .section-title {
+                font-size: 1.1em;
+            }
+            
+            .stat-value {
+                font-size: 1.5em;
+            }
+            
+            .stat-label {
+                font-size: 0.75em;
+            }
+            
+            .sector-table {
+                font-size: 0.75em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Stack sector legend items vertically on very small screens */
+            .track-map > div > div {
+                flex-direction: column !important;
+                gap: 10px !important;
             }
         }
     </style>
@@ -327,7 +432,7 @@
         <!-- Comprehensive Team Rankings Table -->
         <div class="section">
             <h2 class="section-title">🏆 COMPLETE TEAM PERFORMANCE RANKINGS</h2>
-            <div style="overflow-x: auto;">
+            <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
                 <table class="sector-table" id="teamRankingsTable">
                     <thead>
                         <tr>
@@ -479,11 +584,12 @@
                         <strong>Learn more:</strong> <a href="https://openf1.org/" target="_blank" style="color: #27F4D2; text-decoration: none; border-bottom: 2px solid #27F4D2;">https://openf1.org/</a>
                     </p>
                     <p style="font-size: 0.95em; color: #999;">
-                        Huge credit to the OpenF1 team for making F1 data accessible to fans and developers.                  </p>
+                        Huge credit to the OpenF1 team for making F1 data accessible to fans and developers. This project wouldn't be possible without their incredible work! 🎉
+                    </p>
                 </div>
 
                 <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px; text-align: center; font-size: 0.9em; color: #999;">
-                    <p>Built with ❤️ for F1 fans</p>
+                    <p>Built with ❤️ for F1 fans | Powered by OpenF1 API | Created with Claude AI</p>
                     <p style="margin-top: 10px;">2026 F1 Season - New Era Begins 🏁</p>
                 </div>
             </div>
